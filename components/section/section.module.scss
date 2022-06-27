@@ -1,0 +1,35 @@
+@use "../../global/variables.scss" as variables;
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  background-color: variables.$primary-color;
+
+  &.relative {
+    position: relative;
+  }
+
+  &__banner {
+    min-height: 70vh;
+    margin-top: 4.1rem;
+
+    &:first-child {
+      max-height: 50%;
+    }
+    @media only screen and (min-width: variables.$max-width-tablet) and (max-width: variables.$max-width-tabletOrMobile) {
+      margin-top: calc(65px + 2rem);
+    }
+  }
+
+  @media only screen and (max-width: variables.$max-width-tablet) {
+    margin-bottom: 0 !important;
+  }
+}
+
+.mobileNone {
+  @media only screen and (max-width: variables.$max-width-tablet) {
+    display: none;
+  }
+}

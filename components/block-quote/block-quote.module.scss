@@ -1,0 +1,25 @@
+@use "../../global/variables.scss" as variables;
+
+.container {
+  max-height: 60%;
+  max-width: 30rem;
+  margin: 2rem 0;
+
+  blockquote {
+    color: variables.$secondary-color;
+    text-align: justify;
+    font-family: "SuisseInt-Regular", sans-serif;
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 1.4rem;
+  }
+
+  .bigger_font {
+    font-size: 1.1rem;
+    @media only screen and (max-width: variables.$max-width-tabletOrMobile) {font-size: 0.9rem !important;}
+  }
+
+  @media only screen and (max-width: variables.$max-width-mobile) {
+    margin: 1rem 0;
+  }
+}

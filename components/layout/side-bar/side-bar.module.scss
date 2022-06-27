@@ -1,0 +1,107 @@
+@use "../../../global/variables.scss" as variables;
+
+.container {
+  $self: &;
+  position: fixed;
+  background-color: variables.$primary-color;
+  border-left: 1px solid variables.$secondary-color;
+  right: -100%;
+  width: 50%;
+  height: 100%;
+  transition: all 0.5s ease 0s;
+  overflow-y: auto;
+  z-index: 999;
+  top: 0;
+
+  &__active {
+    right: 0;
+  }
+
+  &_content {
+    height: 90vh;
+    margin: 4rem 2rem 0.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media only screen and (max-width: variables.$max-width-mobile) {
+      margin: 2rem 2rem 0.5rem 1.5rem;
+    }
+
+    #{ $self }_header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      height: 5vh;
+    }
+
+    #{ $self }_body {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 70vh;
+
+      li {
+        padding-top: 1rem;
+        cursor: pointer;
+        text-align: right;
+        width: 80%;
+        padding-bottom: 5px;
+        border-bottom: 2px solid variables.$secondary-color;
+        transition: all 0.5s ease 0s;
+        margin-bottom: 0.5rem;
+
+        &:hover {
+          transform: translateX(1rem);
+        }
+
+        a {
+          font-size: 1.7rem;
+          font-family: "SuisseInt-Regular";
+          font-weight: 200;
+          color: variables.$secondary-color;
+          &:hover {
+            text-decoration: unset;
+          }
+
+          @media only screen and (min-width: variables.$min-width-middleStart) and (max-width: variables.$max-width-middleEnd) {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    #{ $self }_footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding-right: 3rem;
+      height: 35vh;
+      padding-bottom: 2rem;
+
+      small {
+        font-family: "SuisseInt-Regular", sans-serif;
+      }
+
+      @media only screen and (max-width: variables.$max-width-tablet) {
+        flex-direction: column;
+        align-items: center;
+        padding-right: 0;
+      }
+
+      @media only screen and (max-width: variables.$max-width-mobile) {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+
+  @media only screen and (min-width: variables.$max-width-tabletOrMobile) {
+    right: -100%;
+  }
+
+  @media only screen and (max-width: variables.$max-width-mobile) {
+    width: 100%;
+    border-left: unset;
+  }
+}

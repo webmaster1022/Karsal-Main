@@ -1,0 +1,72 @@
+@use "../../global/variables.scss" as variables;
+
+.item {
+    display: flex;
+    flex-basis: 45%;
+    min-height: 50vh;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin-bottom: 2.5rem;
+    justify-content: space-between;
+
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &:first-child {
+        border-right: 1px solid #6a6f7b6b;
+    }
+
+    @media only screen and (max-width: variables.$max-width-tablet) {
+        min-height: 40vh;
+        margin-bottom: 2rem;
+
+        &:first-child {
+            border-right: unset;
+        }
+    }
+
+    .boxTitle {
+        font-family: "Zaph Humanist", sans-serif;
+        text-decoration: underline;
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: variables.$secondary-color;
+        margin: 1rem 0;
+
+        @media only screen and (max-width: variables.$max-width-middle) {
+            font-size: 2rem;
+        }
+    }
+
+    .boxSubtitle {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+
+        .h4 {
+            font-family: "SuisseInt-Regular", sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #6a6f7b;
+            margin-left: 5px;
+            letter-spacing: 0.1em;
+        }
+    }
+
+    .p {
+        font-family: "SuisseInt-Regular", sans-serif;
+        text-decoration: none;
+        font-weight: 200;
+        letter-spacing: 0.05em;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-bottom: 1.5rem;
+        // margin-left: 25px;
+        text-align: center;
+    }
+}

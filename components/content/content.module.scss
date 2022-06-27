@@ -1,0 +1,74 @@
+@use "../../global/variables.scss" as variables;
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 50%;
+  min-height: 40vh;
+
+  @media only screen and (max-width: variables.$max-width-tablet) {
+    min-height: 50vh;
+    justify-content: center;
+    flex-basis: unset;
+  }
+
+  @media only screen and (min-width: variables.$min-width-widescreen) {
+    justify-content: center;
+  }
+
+  .body {
+    margin: 68px 25px;
+    display: flex;
+    flex-direction: column;
+
+    &__logo {
+      margin-bottom: 10vh;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-family: "Zaph Humanist", sans-serif;
+        font-weight: 200;
+        font-size: 2rem;
+        color: variables.$secondary-color;
+      }
+      @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
+        margin-left: 0;
+      }
+      
+      .bigger_title {
+        font-size: 2.5rem;
+        @media only screen and (max-width: variables.$max-width-tabletOrMobile) {font-size: 2rem !important; }
+      }
+    }
+    @media only screen and (max-width: variables.$max-width-tabletOrMobile) {
+      &__logo {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: variables.$max-width-mobile) {
+      margin: 90px 50px;
+    }
+  }
+
+  &__narrower {
+    flex-basis: 45%;
+    align-items: flex-start;
+    justify-content: center;
+
+    .content {
+      margin-top: 90px;
+    }
+
+    @media only screen and (max-width: variables.$max-width-tablet) {
+      flex-basis: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

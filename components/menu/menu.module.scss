@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+
+  &__left {
+    flex-basis: 35%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__right {
+    flex-direction: row-reverse;
+    flex-basis: 65%;
+  }
+}
+
+.containerEqual {
+  display: flex;
+
+  &__left {
+    flex-basis: 30%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__center {
+    flex-basis: 40%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  &__right {
+    flex-direction: row-reverse;
+    flex-basis: 30%;
+  }
+}
